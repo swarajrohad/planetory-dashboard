@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ocean Health Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .chart-container {
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+
+        details > summary {
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 300px !important;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ocean Health Dashboard</h2>
+
+    <details class="chart-container" open>
+        <summary>🌊 Ocean Temperature (°C)</summary>
+        <canvas id="temperatureChart"></canvas>
+    </details>
+
+    <details class="chart-container">
+        <summary>🌡️ Acidity (pH)</summary>
+        <canvas id="acidityChart"></canvas>
+    </details>
+
+    <details class="chart-container">
+        <summary>🧴 Plastic Density (particles/km²)</summary>
+        <canvas id="plasticChart"></canvas>
+    </details>
+
+    <details class="chart-container">
+        <summary>🪸 Coral Health Index</summary>
+        <canvas id="coralChart"></canvas>
+    </details>
+
+    <script>
+        const labels = {{ dates|safe }};
+
+        const drawChart = (id, label, data, color) => {
+            new Chart(document.getElementById(id), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        borderColor: color,
+                        backgroundColor: color + '33',
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: { title: { display: true, text: 'Date' } },
+                        y: { beginAtZero: false }
+                    }
+                }
+            });
+        };
+
+        drawChart('temperatureChart', 'Ocean Temp (°C)', {{ temperature|safe }}, 'rgb(255, 99, 132)');
+        drawChart('acidityChart', 'Acidity (pH)', {{ acidity|safe }}, 'rgb(54, 162, 235)');
+        drawChart('plasticChart', 'Plastic Density', {{ plastic_density|safe }}, 'rgb(255, 206, 86)');
+        drawChart('coralChart', 'Coral Health Index', {{ coral_health|safe }}, 'rgb(75, 192, 192)');
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biodiversity Data</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2 style="text-align: center;">Biodiversity Trends</h2>
+    <canvas id="biodiversityChart" width="600" height="300"></canvas>
+
+    <script>
+        const ctx = document.getElementById('biodiversityChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ years|safe }},
+                datasets: [
+                    {
+                        label: 'Total Species',
+                        data: {{ species|safe }},
+                        borderColor: 'green',
+                        fill: false
+                    },
+                    {
+                        label: 'Endangered Species',
+                        data: {{ endangered|safe }},
+                        borderColor: 'orange',
+                        fill: false
+                    },
+                    {
+                        label: 'Extinction Rate',
+                        data: {{ extinction|safe }},
+                        borderColor: 'red',
+                        fill: false,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        type: 'linear',
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Species Count'
+                        }
+                    },
+                    y1: {
+                        type: 'linear',
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'Extinction Rate'
+                        },
+                        grid: {
+                            drawOnChartArea: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+    

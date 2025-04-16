@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climate Change Indicator – Planetary Health Check</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('https://img.freepik.com/free-photo/earth-day-celebration-concept_23-2151262648.jpg?t=st=1744802324~exp=1744805924~hmac=b6effad1bf80e74d059ae421343e441a09d6bb6504cc5e60fd887caa7af049df&w=1800') center/cover no-repeat fixed;
+      color: #e6edf3;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(13, 17, 23, 0.85);
+      z-index: -1;
+    }
+
+    .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 1rem 0.2rem 1rem; /* Reduced bottom padding further */
+  background-color: rgba(0, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+
+    .nav-left .logo {
+      height: 120px; /* Logo size remains the same */
+      width: auto;
+      padding: -0.2px; /* Increased padding around the logo */
+    }
+
+    .nav-center h1 {
+      margin: 0;
+      font-size: 2rem; /* Increased heading size */
+      color: #808080; /* Grey color for the heading */
+      font-weight: 600;
+    }
+
+    .nav-right .menu-btn {
+      background: none;
+      border: 1px solid #58a6ff;
+      color: #58a6ff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-right .menu-btn:hover {
+      background-color: rgba(88, 166, 255, 0.1);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      color: #58a6ff;
+      margin-top: 2rem;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .info-section {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #000;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+      gap: 2rem;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(88, 166, 255, 0.2);
+    }
+
+    .info-text {
+      flex: 1 1 300px;
+    }
+
+    .info-text h2 {
+      margin-top: 0;
+      color: #ff7b72;
+    }
+
+    .info-text p {
+      font-size: 1.05rem;
+      color: #e6edf3;
+    }
+
+    .info-image {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .info-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .info-image img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      border-top: 1px solid #30363d;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .info-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .info-text {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="nav-center">
+      <h1>Climate Change Indicator</h1>
+    </div>
+    <div class="nav-right">
+      <button class="menu-btn">☰ Menu</button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="info-section">
+      <div class="info-text">
+        <h2>🌍 Climate Change Boundary Breach</h2>
+        <p>
+          The Climate Change boundary has been surpassed, indicating that Earth's climate system is undergoing
+          significant and potentially irreversible changes.
+        </p>
+      </div>
+      <div class="info-image">
+        <img src="CLI.jpg" alt="Climate Boundary Breach Graphic" />
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-text">
+        <h2>🌊 Impacts</h2>
+        <p>
+          Increasing radiative forcing raises temperatures in the atmosphere,
+          oceans, and land, triggering extreme weather and sea-level rise.
+        </p>
+      </div>
+      <div class="info-image">
+        <img src="https://www.planetaryhealthcheck.org/storyblok-cdn/f/301438/5464x3640/36a61be44d/adobestock_447651703.jpeg/m/1920x0/smart/filters:quality(75)" alt="Climate Impact Image" />
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-text">
+        <h2>🧪 Control Variables</h2>
+        <h3>1. Atmospheric CO₂ Concentration</h3>
+        <p>
+          Atmospheric CO₂ is higher than any time in the past 15 million years, due to human activity.
+        </p>
+        <h3>2. Radiative Forcing (TOA)</h3>
+        <p>
+          All human-influenced forces that alter the Earth's energy balance, including greenhouse gasses and land-use.
+        </p>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-text">
+        <h2>🔥 Key Drivers</h2>
+        <p>
+          Fossil fuel burning increases CO₂. Other drivers include agriculture, aerosols, and ecosystem changes.
+        </p>
+      </div>
+      <div class="info-image">
+        <img src="https://www.planetaryhealthcheck.org/storyblok-cdn/f/301438/3600x2400/c6473b900f/adobestock_485576948.jpeg/m/1920x0/smart/filters:quality(75)" alt="Fossil Fuel Impact" />
+        <br><br>
+        <img src="https://www.planetaryhealthcheck.org/storyblok-cdn/f/301438/2242x1494/1e4caca075/farming.jpg/m/1920x0/smart/filters:quality(75)" alt="Agricultural Activity" />
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-text">
+        <h2>🌡️ Importance</h2>
+        <p>
+          We've hit a global temperature increase of 1.45°C — close to the Paris Agreement's 1.5°C cap.
+        </p>
+        <p>
+          Crossing this boundary raises the risk of climate tipping points and runaway feedback loops.
+        </p>
+      </div>
+      <div class="info-image">
+        <img src="https://www.planetaryhealthcheck.org/storyblok-cdn/f/301438/1386x1386/684f8fc168/climate.png/m/1920x0/smart/filters:quality(75)" alt="Climate Change Graphic" />
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Planetary System Database. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
